@@ -33,7 +33,7 @@ function initGame() {
 }
 
 function cellClicked() {
-  const cellIndex = this.getAttribute("cellIndex");
+  const cellIndex = this.getAttribute("id");
 
   if (options[cellIndex] != "" || !running) {
     return;
