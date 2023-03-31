@@ -1,0 +1,44 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  padding-bottom: 30px;
+}
+
+.cell {
+  width: 75px;
+  height: 75px;
+  border: 2px solid;
+  box-shadow:  0 0 0 2px;
+  line-height: 75px;
+  font-size: 50px;
+  cursor: pointer;
+}
+
+#status-text {
+  padding: 30px;
+}
+
+#restart-button {
+  width: 100px;
+  height: 50px;
+}
+
+#game-container {
+    height: 100vh;
+    display: flex;
+    font-family: sans-serif;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#cell-container {
+  height: 225px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: 225px;
+}
