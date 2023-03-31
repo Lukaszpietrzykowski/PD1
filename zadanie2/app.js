@@ -55,8 +55,6 @@ function changePlayer() {
 }
 
 function checkWin() {
-  console.log(currentPlayer);
-  console.log(playerLabel.value);
   let roundWon = false;
 
   for (let i = 0; i < winConditions.length; i++) {
