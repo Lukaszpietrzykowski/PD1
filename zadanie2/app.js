@@ -3,7 +3,6 @@ const statusText = document.querySelector("#status-text");
 const restartButton = document.querySelector("#restart-button");
 let playerLabel = document.getElementById("player-label");
 let enemy = document.getElementById("enemy-label");
-let computerTurn = false;
 
 const winConditions = [
   [0, 1, 2],
@@ -28,6 +27,7 @@ function initGame() {
   restartButton.addEventListener("click", restartGame);
   playerLabel.addEventListener("change", setPlayer);
   enemy.addEventListener("change", setEnemy);
+  playerLabel = playerLabel.value
   statusText.textContent = `Tura gracza ${currentPlayer}`;
   running = true;
 }
@@ -38,6 +38,8 @@ function cellClicked() {
   if (options[cellIndex] != "" || !running) {
     return;
   }
+  console.log(currentPlayer)
+  console.log(playerLabel)
 
   updateCell(this, cellIndex);
   checkWin();
@@ -46,7 +48,6 @@ function cellClicked() {
 function updateCell(cell, index) {
   options[index] = currentPlayer;
   cell.textContent = currentPlayer;
-  computerTurn = computerTurn == false ? true : false;
 }
 
 function changePlayer() {
@@ -80,7 +81,7 @@ function checkWin() {
     running = false;
   } else {
     changePlayer();
-    if (isComputer && currentPlayer != playerLabel.value) {
+    if (isComputer && currentPlayer != playerLabel) {
       generateComputerMove();
     }
   }
