@@ -1,11 +1,27 @@
-import MainPage from "../views/MainPage.vue";
-import { createRouter, createWebHashHistory } from "vue-router";
+// Composables
+import { createRouter, createWebHistory } from 'vue-router'
 
-const routes = [{ path: "/", component: MainPage }];
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: () => import('@/views/Home.vue'),
+  }, 
+  {
+    path: '/about',
+    name: 'About',
+    component: () => import('@/views/About.vue'),
+  },
+  {
+    path: '/card1',
+    name: 'CardInfo',
+    component: () => import('@/views/CardTextView.vue'),
+  }
+]
 
 const router = createRouter({
-  history: createWebHashHistory("/NAZWAREPO/"),
+  history: createWebHistory('/NAZWAREPO'),
   routes,
-});
+})
 
-export default router;
+export default router
